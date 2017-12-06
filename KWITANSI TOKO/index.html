@@ -1,0 +1,118 @@
+<html>
+    <head>
+        <title>Percobaan 9 | 2110151046</title>
+    </head>
+    <body>
+        <table>
+            <tr>
+                <td>
+                    <a href="sc1.txt">
+                    <button>Source Code</button>
+                    </a>
+                </td>
+            </tr>
+        </table>
+        
+        <!--Header-->
+        <hr>
+        <h1 align="center"> >> HANDPHONE SHOP << </h1>
+        <hr>
+        <p align="center">Produk GSM Mobile (Best Price) :</p>
+        <br><br>
+        
+        <!--Daftar Harga-->
+        <form action="nota.php" method="post" accept-charset="utf-8" align="center">
+            <table align="center">
+                <tr>
+                    <td>
+                        <input type="checkbox" name="prod[Nokia 1208]" value="350000" id="P1"><label for="P1">Nokia 1208 Rp. 350.000,-</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" name="prod[Nokia 1661]" value="465000" id="P2"><label for="P2">Nokia 1661 Rp. 465.000,-</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" name="prod[SonyEricsson K330]" value="485000" id="P3"><label for="P3">SonyEricsson K330 Rp. 485.000,-</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" name="prod[Samsung Champ]" value="865000" id="P4"><label for="P4">Samsung Champ Rp. 865.000,-</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" name="prod[Samsung B3410]" value="1624000" id="P5"><label for="P5">Samsung B3410 Rp. 1.624.000,-</label>
+                    </td>
+                </tr>
+            </table>
+            <p>===================================</p>
+            <!--Data Customer-->
+            <table align="center">
+                <tr>
+                    <td>Data Customer</td>
+                </tr>
+                <tr>
+                    <td>ID Customer </td>
+                    <td> : </td>
+                    <td>
+                        <input type="text" name="id_cstmr">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Nama </td>
+                    <td> : </td>
+                    <td>
+                        <input type="text" name="nama">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Email </td>
+                    <td> : </td>
+                    <td>
+                        <input type="text" name="mail">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Alamat </td>
+                    <td> : </td>
+                    <td>
+                        <input type="text" name="address">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Member</td>
+                    <td> : </td>
+                    <td>
+                        <input type="radio" name="member" value="2" id="M1"><label for="M1">Member</label>
+                        <input type="radio" name="member" value="1" id="M2"><label for="M2">Bukan Member</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Pembayaran </td>
+                    <td> : </td>
+                    <td>
+                        <select name="pbayar">
+                            <option disabled selected>-- pilih pembayaran --</option>
+                            <option value="1">VISA</option>
+                            <option value="2">Master Card</option>
+                            <option value="3">Debit BCA</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <button type="submit">BELI</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+        <hr>
+        <h6 align="center">editor By. Ma'arif  |  2110151046  |  <i>maarif46@it.student.pens.ac.id</i></h6>
+    </body>
+</html>
