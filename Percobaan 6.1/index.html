@@ -1,0 +1,424 @@
+<html>
+    <head>
+        <link rel="icon" href="img/formicon.png">
+        <title>Percobaan 6.1</title>
+    </head>
+    
+    <style type="text/css" media="screen">
+        
+        .error{
+            color: red;
+            padding-left: 10px;
+        }
+        
+        body{
+            background-color: aliceblue;
+        }
+
+        
+    </style>
+    
+    <body>
+        <h1 align="left"><strong>Formulir 1 :</strong></h1>
+        <br>
+        <br>
+        <form name="form1">
+            <table>
+                <tr>
+                    <!--form-->
+                    <td>
+                        <tr>
+                            <td>1.</td>
+                            <td>Nama * </td>
+                            <td>:</td>
+                            <td>
+                                <input type="text" name="nama" value="" placeholder="Nama" onblur="validasi_nama()" onkeyup="Huruf(window.event);validasi_nama()" onkeydown="Huruf(window.event)">
+                                <span id="error-nama" class="error"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2.</td>
+                            <td>NRP * </td>
+                            <td>:</td>
+                            <td>
+                                <input type="number" name="nrp" value="" placeholder="NRP" onblur="validasi_nrp()" onkeyup="Angka(window.event);validasi_nrp()" onkeydown="Angka(window.event)">
+                                <span id="error-nrp" class="error"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>3.</td>
+                            <td>Kelas * </td>
+                            <td>:</td>
+                            <td>
+                                <input type="text" name="kelas" value="" placeholder="Kelas" onblur="validasi_kls()" onkeyup="validasi_kls()">
+                                <span id="error-kelas" class="error"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>4.</td>
+                            <td>Jenis Kelamin * </td>
+                            <td>:</td>
+                            <td>
+                                <input type="radio" name="kelamin" value="pria" id="male" onchange="validasi_klmn()"> Pria
+                                <input type="radio" name="kelamin" value="wanita" id="female" onchange="validasi()"> Wanita 
+                                <span id="error-kelamin" class="error"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>5.</td>
+                            <td>Agama * </td>
+                            <td>:</td>
+                            <td>
+                                <select name="agama" onblur="validasi_agm()" onchange="validasi_agm();tampil_agama()">
+                                    <option value="pilih" disabled selected >... Pilih Agama ...</option>
+                                    <option value="islam">ISLAM</option>
+                                    <option value="protestan">KRISTEN PROTESTAN</option>
+                                    <option value="katolik">KRISTEN KATOLIK</option>
+                                    <option value="hindu">HINDU</option>
+                                    <option value="budha">BUDHA</option>
+                                    <option value="konghucu">KONGHUCU</option>
+                                </select>
+                                <span id="error-agama" class="error"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>6.</td>
+                            <td>Tempat/Tanggal Lahir * </td>
+                            <td>:</td>
+                            <td>
+                                <input type="text" name="tmpt" value="" placeholder="Tempat Lahir" onblur="validasi_tgl()" onkeyup="validasi_tgl()"> / <input type="date" name="time" value="" onblur="validasi_tgl()"> 
+                                <span id="error-tgllhr" class="error"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>7.</td>
+                            <td>Alamat * </td>
+                            <td>:</td>
+                            <td>
+                                <textarea name="alamat" value="" placeholder="tuliskan alamat lengkap anda!!!" onblur="validasi_alm()" onkeyup="validasi_alm()"></textarea>
+                                <span id="error-alamat" class="error"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>8.</td>
+                            <td>Riwayat Pendidikan * </td>
+                            <td>:</td>
+                        </tr>
+                            <tr>
+                                <td>&nbsp;</td>
+                                <td>a. SD</td>
+                                <td>:</td>
+                                <td>
+                                    <input type="text" name="sd" value="" onblur="validasi_sd()" onkeyup="validasi_sd()">
+                                    <span id="error-sd" class="error"></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>&nbsp;</td>
+                                <td>b. SMP</td>
+                                <td>:</td>
+                                <td>
+                                    <input type="text" name="smp" value="" onblur="validasi_smp()" onkeyup="validasi_smp()">
+                                    <span id="error-smp" class="error"></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>&nbsp;</td>
+                                <td>c. SMA</td>
+                                <td>:</td>
+                                <td>
+                                    <input type="text" name="sma" value="" onblur="validasi_sma()" onkeyup="validasi_sma()">
+                                    <span id="error-sma" class="error"></span>
+                                </td>
+                            </tr>
+                        <tr>
+                            <td>9.</td>
+                            <td>Email * </td>
+                            <td>:</td>
+                            <td>
+                                <input type="text" name="email" value="" placeholder="ex : emailanda@gmail.com" onblur="validasi_email()" onkeyup="validasi_email()">
+                                <span id="error-email" class="error"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>10.</td>
+                            <td>Homepage </td>
+                            <td>:</td>
+                            <td><input type="text" nama="homepage" value="" placeholder="homepage"></td>
+                        </tr>
+                        <tr>
+                            <td>11.</td>
+                            <td>Hobby </td>
+                            <td>:</td>
+                            <td><textarea name="hobi" value="" placeholder="tuliskan hobi anda!!!"></textarea></td>
+                        </tr>
+                        <tr>
+                            <td>12.</td>
+                            <td>Interest </td>
+                            <td>:</td>
+                            <td>
+                                <input type="checkbox" name="komputer" value=""> Komputer
+                                <input type="checkbox" name="sport" value=""> Sport
+                                <input type="checkbox" name="travelling" value=""> Travelling
+                                <input type="checkbox" name="writing" value=""> Writing
+                                <input type="checkbox" name="reading" value=""> Reading
+                            </td>
+                        </tr>
+                        <tr><td colspan="4">&nbsp;</td></tr>
+                        <tr>
+                            <td></td>
+                            <td>
+                                <h5><i>* wajib diisi!!!</i></h5>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="4" align=""><input type="submit" name="simpan" value="Simpan" onclick="validasi_akhir(window.event)"> <input type="reset" name="simpan" value="Reset" onclick="reset(window.event)"></td>
+                        </tr>
+
+                    </td>
+                </tr>
+            </table>
+        </form>
+        <h5 align="center">editor By. Ma'arif  |  2110151046  |  <i>maarif46@it.student.pens.ac.id</i></h5>
+        
+    
+    <script>
+            var nama = document.form1.nama;
+            var nrp = document.form1.nrp;
+            var kelas = document.form1.kelas;
+            var agama = document.form1.agama;
+            var kelamin = document.form1.kelamin;
+            var time = document.form1.time;
+            var tmpt = document.form1.tmpt;
+            var alamat = document.form1.alamat;
+            var sd = document.form1.sd;
+            var smp = document.form1.smp;
+            var sma = document.form1.sma;
+            var email = document.form1.email;
+        
+        function validasi_akhir(event){
+            
+            event.preventDefault();
+
+            if(validasi_nama() && validasi_nrp() && validasi_kls() && validasi_klmn() && validasi_agm() && validasi_alm() && validasi_sd() && validasi_smp() && validasi_sma() && validasi_tgl() && validasi_email()){
+                
+                if(window.confirm("Apakah Anda yakin ingin menyimpan ?"))
+				{
+					window.alert("Data sudah tersimpan !");
+				}
+
+            }
+        }
+        
+        function reset(event){
+            event.preventDefault();
+            document.form1.reset();
+            document.getElementByClassName("error").innerHTML = "";
+        }
+        
+        function validasi_nama(){
+                //nama
+                 if(nama.value==""){
+                    nama.focus();
+                    document.getElementById("error-nama").innerHTML = "Wajib Diisi !!!";
+                     return false;
+                }
+                
+                else{
+                    document.getElementById("error-kelas").innerHTML = "";
+                    return true;
+                }
+            }
+        
+        function validasi_nrp(){
+            //nrp
+                if(nrp.value==""){
+                    nrp.focus();
+                    document.getElementById("error-nrp").innerHTML = "Wajib Diisi !!!";
+                    return false;
+                }
+                
+                else{
+                    document.getElementById("error-kelas").innerHTML = "";
+                    return true;
+                }
+        }
+        
+        function validasi_kls(){
+            //kelas
+                if(kelas.value==""){
+                    kelas.focus();
+                    document.getElementById("error-kelas").innerHTML = "Wajib Diisi !!!";
+                    return false;
+                }
+                
+                else{
+                    
+                    document.getElementById("error-kelas").innerHTML = "";
+                    return true;
+                }
+        }
+        
+        function validasi_klmn(){
+            //kelamin
+                if(kelamin.value==""){
+                    document.getElementById("error-kelamin").innerHTML = "Wajib Diisi !!!";
+                    return false;
+                }
+                
+                else{
+                    document.getElementById("error-kelas").innerHTML = "";
+                    return true;
+                }
+        }
+        
+        function validasi_agm(){
+            //agama
+            
+                if(agama.selectedIndex==0){
+                    document.getElementById("error-agama").innerHTML = "Wajib Diisi !!!";
+                    return false;
+                }
+            
+                else{
+                    document.getElementById("error-kelas").innerHTML = "";
+                    return true;
+                }
+            
+               
+        }
+        
+        function tampil_agama(){
+            var agama_indeks = document.form1.agama.selectedIndex;
+            var agama_teks = document.form1.agama.options[agama_indeks].text;
+            
+             if (agama_indeks > 0){
+                    alert("Anda memilih agama " + agama_teks);
+                }
+        }
+        
+        function validasi_alm(){
+            //agama
+                if(alamat.value==""){
+                    alamat.focus();
+                    document.getElementById("error-alamat").innerHTML = "Wajib Diisi !!!";
+                    return false;
+                }
+                
+                else{
+                    document.getElementById("error-kelas").innerHTML = "";
+                    return true;
+                }
+        }
+        
+        function validasi_sd(){
+            //alamat
+                if(alamat.value==""){
+                    alamat.focus();
+                    document.getElementById("error-alamat").innerHTML = "Wajib Diisi !!!";
+                    return false;
+                }
+                
+                else{
+                    document.getElementById("error-kelas").innerHTML = "";
+                    return true;
+                }
+        }
+        
+        function validasi_tgl(){
+            //tgl-lahir
+                if(time.value=="" || tmpt.value==""){
+                    if(tmpt.value==""){
+                        tmpt.focus();
+                    }
+                    if(time.value==""){
+                        time.focus();
+                    }
+                        document.getElementById("error-tgllhr").innerHTML = "Wajib Diisi !!!";
+                    return false;
+                    
+                }
+                
+                else{
+                    document.getElementById("error-kelas").innerHTML = "";
+                    return true;
+                }
+        }
+        
+        function validasi_sd(){
+            //sd
+                if(sd.value==""){
+                    sd.focus();
+                    document.getElementById("error-sd").innerHTML = "Wajib Diisi !!!";
+                    return false;
+                }
+                
+                else{
+                    document.getElementById("error-kelas").innerHTML = "";
+                    return true;
+                }
+        }
+        
+        function validasi_smp(){
+            //smp
+                if(smp.value==""){
+                    smp.focus();
+                    document.getElementById("error-smp").innerHTML = "Wajib Diisi !!!";
+                    return false;
+                }
+                
+                else{
+                    document.getElementById("error-kelas").innerHTML = "";
+                    return true;
+                }
+        }
+        
+        function validasi_sma(){
+            //sma
+                if(sma.value==""){
+                    sma.focus();
+                    document.getElementById("error-sma").innerHTML = "Wajib Diisi !!!";
+                    return false;
+                }
+                
+                else{
+                    document.getElementById("error-kelas").innerHTML = "";
+                    return true;
+                }
+        }
+        
+        function validasi_email(){
+            //email
+                if(email.value==""){
+                    email.focus();
+                    document.getElementById("error-email").innerHTML = "Wajib Diisi !!!";
+                    return false;
+                }
+                
+                else{
+                    document.getElementById("error-kelas").innerHTML = "";
+                    return true;
+                }
+        }
+        
+        function Huruf(event) {
+			var kar = event.keyCode;
+  			if(kar > 31 && kar != 32 && (kar < 65 || kar > 90) && (kar < 97 || kar > 122))
+  			{
+  				event.preventDefault();
+  				return false;
+  			}
+		}
+
+		function Angka(event) {
+			var kar = event.keyCode;
+  			if(kar > 57 || (kar>32 && kar<48))
+  			{
+  				event.preventDefault();
+  				return false;
+  			}
+		}
+
+    </script>
+    </body>
+</html>
